@@ -1,0 +1,112 @@
+spring:
+  profiles:
+    active:
+    - 7001
+
+---
+server:
+  port: 7001
+
+eureka:
+  instance:
+    hostname: eureka7001.com
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone:  http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/,http://eureka7004.com:7004/eureka/,http://eureka7005.com:7005/eureka/,http://eureka7006.com:7006/eureka/
+
+spring:
+  profiles: 7001
+  application:
+    name: statistics-eureka-7001
+
+---
+server:
+  port: 7002
+
+spring:
+  profiles: 7002
+  application:
+    name: statistics-eureka-7002
+
+eureka:
+  instance:
+    hostname: eureka7002.com
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone:  http://eureka7001.com:7001/eureka/,http://eureka7003.com:7003/eureka/,http://eureka7004.com:7004/eureka/,http://eureka7005.com:7005/eureka/,http://eureka7006.com:7006/eureka/
+
+---
+server:
+  port: 7003
+
+spring:
+  profiles: 7003
+  application:
+    name: statistics-eureka-7003
+
+eureka:
+  instance:
+    hostname: eureka7003.com
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone:  http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7004.com:7004/eureka/,http://eureka7005.com:7005/eureka/,http://eureka7006.com:7006/eureka/
+
+---
+server:
+  port: 7004
+
+spring:
+  profiles: 7004
+  application:
+    name: statistics-eureka-7004
+
+eureka:
+  instance:
+    hostname: eureka7004.com
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone:  http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/,http://eureka7005.com:7005/eureka/,http://eureka7006.com:7006/eureka/
+
+---
+server:
+  port: 7005
+
+spring:
+  profiles: 7005
+  application:
+    name: statistics-eureka-7005
+
+eureka:
+  instance:
+    hostname: eureka7005.com
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone:  http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/,http://eureka7004.com:7004/eureka/,http://eureka7006.com:7006/eureka/
+
+---
+server:
+  port: 7006
+
+spring:
+  profiles: 7006
+  application:
+    name: statistics-eureka-7006
+
+eureka:
+  instance:
+    hostname: eureka7006.com
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone:  http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/,http://eureka7004.com:7004/eureka/,http://eureka7005.com:7005/eureka/
